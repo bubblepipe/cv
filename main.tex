@@ -61,33 +61,6 @@
 
 
 \begin{rSection}{Projects}
-
-    \textbf{Lorenz Attractor} \hfill \\
-    \url{https://github.com/AOIDUO/LorenzAttractor/} \hfill \par
-    \begin{itemize}
-        \itemsep \itemsepval {} 
-        \item[-] A animated figure of Lorenz attractor written in Haskell.
-        \item[-] Demo: \url{https://homepages.inf.ed.ac.uk/wadler/fp-competition-2019/#(16)}.
-    \end{itemize}
-
-    \textbf{RISC-V Processor} \par
-    \begin{itemize}
-        \itemsep \itemsepval {} 
-        \item[-] Programs a Xilinx PYNQ demo board into a working RV32IM processor.
-        \item[-] Classic 5-stage pipeline and speculative result forwarding.
-        \item[-] Fast 32-bit multiplier by utilizing FPGA's builtin 16-bit multiplier in parallel.
-    \end{itemize}
-
-    \textbf{Turing Machine Emulator} \hfill \\ 
-    \url{https://github.com/AOIDUO/RegisterMachineEmulator/} \hfill \par
-    \begin{itemize}
-        \itemsep \itemsepval {} 
-        
-        \item[-] A emulator for the register variant of turing machine with only 2 instructions: \mintinline{cpp}{inc} and \mintinline{cpp}{decjz}.
-        \item[-] Has a parser that recognizes instruction source code in BNF style.
-        \item[-] Planning to complete the support of macro in the future.
-    \end{itemize}
-
     \textbf{SIMD Support for LLVM MLIR Presburger library - In progress} \hfill \\
     \url{llvm/llvm-project/blob/main/mlir/lib/Analysis/Presburger/Simplex.cpp} \hfill \par
     \begin{itemize}
@@ -100,9 +73,36 @@
             \item[-] Exploits fused-multiply-add,
             \item[-] Float point overflow and imprecision checking is convenient.
         \end{itemize}
-    
-
+    \item[-] Discovered bugs in \mintinline{cpp}{llvm-mca} when it analysis FMA throughput on zen3. 
     \end{itemize}
+
+    \textbf{RISC-V Processor} \par
+    \begin{itemize}
+        \itemsep \itemsepval {} 
+        \item[-] Programs a Xilinx PYNQ demo board into a working RV32IM processor.
+        \item[-] Classic 5-stage pipeline and speculative result forwarding.
+        \item[-] Fast 32-bit multiplier by utilizing FPGA's builtin 16-bit multiplier in parallel.
+    \end{itemize}
+    
+    \textbf{Lorenz Attractor} \hfill \\
+    \url{https://github.com/AOIDUO/LorenzAttractor/} \hfill \par
+    \begin{itemize}
+        \itemsep \itemsepval {} 
+        \item[-] A animated figure of Lorenz attractor written in Haskell.
+        \item[-] Demo: \url{https://homepages.inf.ed.ac.uk/wadler/fp-competition-2019/#(16)}.
+    \end{itemize}
+
+    \textbf{Turing Machine Emulator} \hfill \\ 
+    \url{https://github.com/AOIDUO/RegisterMachineEmulator/} \hfill \par
+    \begin{itemize}
+        \itemsep \itemsepval {} 
+        
+        \item[-] A emulator for the register variant of turing machine with only 2 instructions: \mintinline{cpp}{inc} and \mintinline{cpp}{decjz}.
+        \item[-] Has a parser that recognizes instruction source code in BNF style.
+        \item[-] Planning to complete the support of macro in the future.
+    \end{itemize}
+
+
 \end{rSection} 
 
 \begin{rSection}{Skills}
