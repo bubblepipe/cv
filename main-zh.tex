@@ -4,7 +4,7 @@
 \newcommand{\itemsepval}{-6pt}
 \newcommand{\code}{\mintinline{html}}
 
-\usepackage[left=0.5in,top=0.3in,right=0.5in,bottom=0.3in]{geometry} % Document margins
+\usepackage[left=1in,top=1in,right=1in,bottom=1in]{geometry} % Document margins
 \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
 \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
 \usepackage{etoolbox}
@@ -19,7 +19,7 @@
 % \setCJKmainfont{SimSun}
 \name{周祺} 
 
-\address{+86 185 5254 1785 \\ +44 07710 799432}
+\address{+86 185 5254 1785}
 % \address{\url{+44 07710 799432} \\ \url{+86 185 5254 1785}} 
 \address{\url{zhouqi008012@gmail.com} \\ \url{Q.Zhou-24@sms.ed.ac.uk} } 
 
@@ -29,38 +29,56 @@
 
 \begin{rSection}{教育背景}
 
-{\bf  爱丁堡大学}, 计算机科学 （本科）\hfill {2019 - 2023}
+{\bf  爱丁堡大学}，计算机科学 （本科）\hfill {2019 - 2023} \\
+平均分 73 (A3) (等效 GPA 4.0)
 
 \end{rSection}
 
 \begin{rSection}{工作经历}
 
-    \textbf{Asteria} \hfill 2020年9月 - 2021年2月  \\
-    \url{https://www.asteria-space.com/} \hfill \par
-    \begin{itemize}
-        \itemsep \itemsepval {} 
-        \item[-] 对太空中的单片机开发版能否连接摄像头并正常工作进行了可能性论证。
-    \end{itemize}
+
      
     \textbf{Codeplay} \hfill 2022年6月 - 2022年9月 \\
     \url{https://www.codeplay.com/} \hfill \par
     \begin{itemize}
         \itemsep \itemsepval {} 
-        \item[-] 工作主要围绕 \code{ComputeArota} (\code{CA}) 进行，这是一个用来实现跨平台 OpenCL, Vulkan 等异构计算框架的工具集。
+        \item[-] 工作主要围绕 \code{ComputeArota} (\code{CA}) 进行，一个用来实现跨平台 OpenCL，Vulkan 等异构计算框架的工具集。
         %  \code{OpenCL}, \code{Vulkan} and etc.
-        \item[-] 给 \code{CA} 添加了新功能： 支持 \code{RV32} 和半精度浮点（\code{RISC-V Zfh} 扩展），使得 \code{CA} 可以编译出 \code{RV32} 或者 \code{Zfh} 的二进制，再用 \code{CA} 集成的 \code{SPIKE} 模拟运行。
+        \item[-] 给 \code{CA} 支持了新功能： \code{RV32} 和半精度浮点（\code{RISC-V Zfh} 扩展），使得 \code{CA} 可以编译出 \code{RV32} 或者 \code{Zfh} 的二进制，再用 \code{CA} 集成的 \code{SPIKE} 模拟运行。
         % \item[-] Discovered and patched some test failing due to float point precision problems. 
-        \item[-] 学习了 \code{Sollya } 的 \code{fpminimax} 函数，并用来生成浮点数复杂运算的多项式的近似算法，且试图修复了一些因浮点数精度问题而导致的测试失败。
+        \item[-] 修复了一些因复杂浮点数运算的多项式的近似精度不足而导致的测试失败。
         \item[-] 给 \code{CA} 的 \code{SPIKE} 做了更快、更直观的代替品：带操作系统的 \code{RISCV-64 QEMU}。宿主机（客户端）通过 \code{socket} 走虚拟网卡上传计算内核二进制、交换数据给模拟器（服务器）。
     \end{itemize}
-      
+    
     \textbf{助教} \hfill 2022年9月 - 2023年5月     \\
-    在以下两门课的实操内容上担任助教，并参与了作业模板设计: \hfill \par
+    在以下两门课的实操内容上担任助教： \hfill 
     \begin{itemize}
         \itemsep \itemsepval {} 
-        \item[-] 计算机架构和设计 (INFR10076), 
-        \item[-] 编译器原理 (INFR10065)。
+        \item[-] \textbf{计算机架构和设计} 
+        \begin{itemize}
+            \itemsep \itemsepval {} 
+            \item[-] 在实验课帮助同学完成 \code{RV32IM} 处理器核心的设计：
+            \begin{itemize}
+                \itemsep \itemsepval {} 
+                \item[1.] 从简单的例子开始，熟悉赛灵思 PYNQ FPGA 单片机开发板，
+                \item[2.] 参照 \code{RV32IM} 标准写出兼容的 \code{ALU} 和寄存器文件， 
+                \item[3.] 在流水线里整合 speculative result forwarding，以处理数据冒险。
+                \item[4.] 分析并优化关键路径，比如并联 FPGA 内置的 16 位乘法器以实现高速 32 位乘法。
+            \end{itemize}
+    
+        \end{itemize}
+    
+        \item[-] \textbf{编译原理} (INFR10065)
+        \begin{itemize}
+            \itemsep \itemsepval {} 
+            \item[-] 编译器利用了 \code{xDSL}（轻量化 \code{MLIR}）框架，从 \code{Python} 编译到 \code{RISC-V}：\url{https://xdsl.dev/}。
+            \item[-] 参与了作业模板设计，并修复了多个 bug。
+            \item[-] 在实验课上为同学答疑。
+        \end{itemize}
     \end{itemize}
+
+
+
 
 
 \end{rSection} 
@@ -71,32 +89,33 @@
     \url{llvm/llvm-project/blob/main/mlir/lib/Analysis/Presburger/Simplex.cpp} \hfill \par
     \begin{itemize}
         \itemsep \itemsepval {} 
-        \item[-] 该库提供了一个线性规划函数，针对数值小而稀疏的矩阵。
-        \item[-] 目标是用 FPU 快速计算 \code{52} 位整数，因为： 
+        \item[-] 该库主要对针对数值小而稀疏的矩阵进行线性规划，
+        \item[-] 目标是用 FPU 快速计算 \code{23} 位整数，因为： 
         \begin{itemize}
             \itemsep \itemsepval {} 
-            \item[-] 双精度浮点数的尾数部分正好是 \code{52} 比特,
-            \item[-] 可以利用浮点数特性：乘加融合运算，
-            \item[-] \code{52} 比特对于数值小的矩阵足够了，不容易触发溢出异常并跳转到极慢的 \code{BigInt} 算法上, 
-            \item[-] 浮点数溢出和不准确的异常检查极为方便。 
+            \item[-] 单精度浮点数的尾数部分正好是 \code{23} 比特，
+            \item[-] 可以利用浮点数特性：乘加融合，
+            \item[-] \code{23} 比特对于数值小的矩阵足够了，不容易触发溢出异常并跳转到极慢的 \code{BigInt} 算法上， 
+            \item[-] 判断溢出或不准确非常方便，检查状态寄存器即可，相比之下每次整数类型的操作都要做额外运算以确保没有溢出。
         \end{itemize}
-    \item[-] 提交了 \code{llvm-mca} 的 bug：分析 \code{zen3} 的 \code{FMA} 指令吞吐量时结果不准确。 
+        \item[-] 用 \code{google/benchmark} 和 \code{perf} 测试性能、分析汇编和优化源码。 
+        \item[-] 给 \code{llvm-mca} 提交了 bug：对 \code{zen3} 的 \code{FMA} 指令吞吐量分析结果不准确。 
     \end{itemize}
 
-    \textbf{RISC-V Processor} \par
-    \begin{itemize}
-        \itemsep \itemsepval {} 
-        \item[-] 在 Xilinx PYNQ 开发版 上运行了 \code{32} 位 \code{RISC-V} 处理器（\code{RV32-IM}）。
-        \item[-] 经典五段流水线，增加了 speculative result forwarding 以提速。
-        \item[-] 利用 FPGA 内置 \code{16} 位整数乘法器，实现快速 \code{32} 位乘法。
-    \end{itemize}
+    % \textbf{RISC-V Processor} \par
+    % \begin{itemize}
+    %     \itemsep \itemsepval {} 
+    %     \item[-] 在 Xilinx PYNQ 开发版 上运行了 \code{32} 位 \code{RISC-V} 处理器（\code{RV32-IM}）。
+    %     \item[-] 经典五段流水线，增加了 speculative result forwarding 以提速。
+    %     \item[-] 利用 FPGA 内置 \code{16} 位整数乘法器，实现快速 \code{32} 位乘法。
+    % \end{itemize}
     
     \textbf{洛伦茨吸引子} \hfill \\
     \url{https://github.com/AOIDUO/LorenzAttractor/} \hfill \par
     \begin{itemize}
         \itemsep \itemsepval {} 
         \item[-] 用 Haskell 写的洛伦茨吸引子的动画。
-        \item[-] 示例: \url{https://homepages.inf.ed.ac.uk/wadler/fp-competition-2019/#(16)}.
+        \item[-] 动画：\url{https://homepages.inf.ed.ac.uk/wadler/fp-competition-2019/#(16)}。
     \end{itemize}
 
     \textbf{图灵机模拟器} \hfill \\ 
@@ -104,18 +123,26 @@
     \begin{itemize}
         \itemsep \itemsepval {} 
         
-        \item[-] 寄存器版本的图灵机变种，只有两条指令： \code{inc} and \code{decjz}。
+        \item[-] 寄存器版本的图灵机变种，只有两条指令： \code{inc} 和 \code{decjz}。
         \item[-] 解析器按照 BNF 范式读取指令源码。 
         \item[-] 实现了对宏的初步支持。
     \end{itemize}
 
+    \textbf{Asteria} \hfill 2020年9月 - 2021年2月  \\
+    \url{https://www.asteria-space.com/} \hfill \par
+    \begin{itemize}
+        \itemsep \itemsepval {} 
+        \item[-] 对太空中的单片机开发版能否连接摄像头并正常工作进行了可能性论证。
+    \end{itemize}
 
 \end{rSection} 
 
 \begin{rSection}{技能}
-    - 有使用 GNU/Linux 的经验，    \\
-    - 熟悉 Java, Agda, Haskell, Python, Shell, Verilog 和 C++ 等多种程序语言， \\
-    - 有用 arduino 和树莓派组装简单电路和嵌入式设备的经验。
+    - 熟悉 \code{Java}、\code{Agda}、\code{Haskell}、\code{Python}、\code{Shell}、\code{Verilog} 和 \code{C++} 等多种程序语言，\\
+    - 有使用 \code{GNU/Linux}、\code{git}、\code{GDB}、CI，各种工具链和软件测试工具的经验， \\
+    % - Capable of building embedded widgets with single board computers and PCDIY.
+    - 学习过《编程语言基础：Agda 描述》，熟悉函数式编程、形式化验证和类型理论。 \\
+    % - 有用 \code{arduino} 和树莓派组装简单电路和嵌入式设备的经验。
 
 \end{rSection} 
 
